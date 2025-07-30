@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        input {position: absolute; display: none}
+
+        .menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            position: absolute;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .material-icons.md-36 { font-size: 36px; color: red }
+
+        .btn {
+            background: #ECEFF1;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+
+        .btn:not(:first-child) {
+            opacity: 0;
+            z-index: -2;
+            transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
+        }
+
+        .btn:nth-child(2) {top:0px;transition-delay: 0s}
+        .btn:nth-child(3) {top:0px;left:0px;transition-delay: 0.1s}
+        .btn:nth-child(4) {left:0px;transition-delay: 0.2s}
+        .btn:nth-child(5) {top:0px;left:0px;transition-delay: 0.3s}
+        .btn:nth-child(6) {top:0px;transition-delay: 0.4s}
+        .btn:nth-child(7) {top:0px;left:0px;transition-delay: 0.5s}
+        .btn:nth-child(8) {left:0px;transition-delay: 0.6s}
+        .btn:nth-child(9) {top:0px;left:0px;transition-delay: 0.7s}
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(2) {
+            top:-75px;opacity:1; /* Ajuste o valor de 'top' para controlar a distância vertical do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(3) {
+            top:-50px;left:50px;opacity:1; /* Ajuste os valores de 'top' e 'left' para controlar a distância diagonal do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(4) {
+            left:75px;opacity:1; /* Ajuste o valor de 'left' para controlar a distância horizontal do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(5) {
+            top:50px;left:50px;opacity:1; /* Ajuste os valores de 'top' e 'left' para controlar a distância diagonal do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(6) {
+            top:75px;opacity:1; /* Ajuste o valor de 'top' para controlar a distância vertical do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(7) {
+            top:50px;left:-50px;opacity:1; /* Ajuste os valores de 'top' e 'left' para controlar a distância diagonal do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(8) {
+            left:-75px;opacity:1; /* Ajuste o valor de 'left' para controlar a distância horizontal do ícone de abrir/fechar */
+        }
+
+        input#toggle:checked ~ #show-menu .btn:nth-child(9) {
+            top:-50px;left:-50px;opacity:1; /* Ajuste os valores de 'top' e 'left' para controlar a distância diagonal do ícone de abrir/fechar */
+        }
+
+        .menuBtn, .closeBtn {
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .closeBtn {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        input#toggle:checked ~ #show-menu .btn .menuBtn {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        input#toggle:checked ~ #show-menu .btn .closeBtn {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <div class="menu">
+        <input type="checkbox" id="toggle" />
+        <label id="show-menu" for="toggle">
+            <div class="btn">
+                <i class="material-icons md-36 toggleBtn menuBtn">menu</i>
+                <i class="material-icons md-36 toggleBtn closeBtn">close</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">photo_camera</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">photo</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">music_note</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">chat_bubble</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">settings</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">phone</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">cloud</i>
+              </div>
+              <div class="btn">
+                  <i class="material-icons md-36">videocam</i>
+              </div>
+          </label>
+      </div>
+
+  </body>
+  </html>
